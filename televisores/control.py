@@ -13,10 +13,10 @@ class Control:
 
     #Getter and setter
 
-    def gettv(self):
+    def getTv(self):
         return self._tv
 
-    def settv(self, tv):
+    def setTv(self, tv):
         self._tv = tv
     
     def setCanal(self, canal):

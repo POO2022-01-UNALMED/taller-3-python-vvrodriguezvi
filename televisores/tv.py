@@ -1,3 +1,6 @@
+from pickle import TRUE
+
+
 class TV:
 
     numTV = 0 #iniciar el contador del # de tvs
@@ -11,10 +14,7 @@ class TV:
         self._control = None
         self.__class__.numTV += 1
 
-    
-    # Getter ans setters
-
-    def getMarca(self):
+    def getMarca(self): # Getter ans setter
         return self._marca
 
     def getControl(self):
@@ -40,11 +40,11 @@ class TV:
 
     
     def setVolumen(self, volumen):
-        if (volumen>= 0 and volumen<=7 and self._estado):
+        if (volumen>= 0 and volumen<=7 and self._estado==TRUE):
             self._volumen = volumen
 
     def setCanal(self, canal):
-        if (canal>0 and canal<=120 and self._estado):
+        if (canal>0 and canal<=120 and self._estado == TRUE):
             self._canal = canal
     
     def getEstado(self):
@@ -53,25 +53,19 @@ class TV:
     def setEstado(self, estado):
         self._estado = estado
 
-    # Metodos de clase
-
     @classmethod
-    def setNumTV(cls, numTV):
+    def setNumTV(cls, numTV): # Metodos de clase
         cls.numTV = numTV
     
     @classmethod
     def getNumTV(cls):
         return cls.numTV
 
-    # METODOS DE INSTANCIA
-
-    # encendido o no
-
-    def turnOn(self):
+    def turnOn(self): # encendido o no
         self._estado = True
 
     def turnOff(self):
-        self._estado = True
+        self._estado = False
 
     #Canal (control)
 
